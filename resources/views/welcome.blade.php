@@ -123,7 +123,9 @@
         </main>
     </div>
 
+    <script src="{{ asset('vendor/kute-js/dist/kute.js') }}"></script>
     <script>
+        
         $(function() {
             $('#hamburger').on('click', function() {
                 $('#hamburger svg.block').toggle(300);
