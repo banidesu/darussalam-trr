@@ -279,6 +279,7 @@
                     <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Berita</a>
                     <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Gallery</a>
                     <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Layanan</a>
+                    <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Login</a>
                 </div>
                 {{-- <div class="border-t border-gray-700 pb-3 pt-4"> --}}
                 <div class="border-t-0 border-gray-700 pb-0 pt-0">
@@ -296,7 +297,7 @@
         </nav>
 
         <header class="bg-slate-800 md:bg-white shadow">
-            <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+            <div class="mx-auto max-w-7xl px-4 pb-6 md:pt-6 sm:px-6 lg:px-8">
                 <div class="ws">
                     <div class="tanggal">
                         <script>

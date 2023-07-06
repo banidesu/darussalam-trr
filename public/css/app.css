@@ -961,6 +961,10 @@ video {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
   }
+
+  .md\:pt-6 {
+    padding-top: 1.5rem;
+  }
 }
 @media (min-width: 1024px) {
 
