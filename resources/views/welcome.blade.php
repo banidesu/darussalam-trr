@@ -1,375 +1,71 @@
-<!DOCTYPE html>
-<html class="h-full bg-gray-100" lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Masjid Darussalam - {{ $pageTitle }}</title>
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <link rel="stylesheet" href="{{ asset('vendor/spicr/dist/css/spicr.min.css') }}">
-
-    <style>
-        .perspective {
-            perspective: 500px;
-            backface-visibility: hidden;
-        }
-
-        .perspective-1500 {
-            perspective: 1500px;
-            backface-visibility: hidden;
-        }
-
-        .overlay {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, .45)
-        }
-
-        /* Muslim Pro Custom Style Start */
-        .ws {
-            padding: 0;
-            position: relative;
-            width: 504px;
-        }
-
-        .ws a {
-            text-decoration: none;
-        }
-
-        .ws .MPwidget {
-            width: 100%;
-            background: rgba(250, 250, 250, 0);
-            margin: 10px 0;
-            box-shadow: 0 0 0 rgba(250, 250, 250, 0);
-        }
-
-        .ws .MPheader {
-            background: rgba(250, 250, 250, 0);
-            padding: 0;
-            min-height: 30px;
-        }
-
-        .ws .MPheader .logo {
-            display: none;
-        }
-
-        .ws .MPheader .title,
-        .ws .tanggal {
-            padding: 0;
-            height: 30px;
-            line-height: 30px;
-            font-size: 14px;
-        }
-
-        .ws .MPwidget .title a,
-        .ws .tanggal {
-            color: #888;
-            font-family: 'Roboto', 'Open Sans', sans-serif;
-            font-weight: bold;
-            font-style: normal;
-            pointer-events: none;
-        }
-
-        .ws .tanggal {
-            position: absolute;
-            right: 0;
-            top: 0;
-            z-index: 20;
-            color: #dd3333;
-            float: right;
-        }
-
-        .ws .MPtimetable tr:first-child {
-            display: none;
-        }
-
-        .ws .MPtimetable tr {
-            display: inline-table;
-            width: 84px;
-            position: relative;
-        }
-
-        .ws .MPtimetable td {
-            position: relative;
-            display: table-row;
-            width: 74px;
-            padding: 5px;
-            text-align: center;
-            font-size: 10px;
-            height: 20px;
-            line-height: 20px;
-            background: rgba(250, 250, 250, 0);
-            text-transform: uppercase;
-            color: rgba(0, 0, 0, 0);
-        }
-
-        .ws .MPtimetable tr td:before {
-            font-size: 10px;
-            text-align: center;
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            color: #333;
-            height: 20px;
-            line-height: 20px;
-        }
-
-        .ws .MPtimetable tr:nth-child(2) td:nth-child(1):before {
-            content: "SUBUH";
-        }
-
-        .ws .MPtimetable tr:nth-child(3) td:nth-child(1):before {
-            content: "TERBIT";
-        }
-
-        .ws .MPtimetable tr:nth-child(4) td:nth-child(1):before {
-            content: "DZUHUR";
-        }
-
-        .ws .MPtimetable tr:nth-child(5) td:nth-child(1):before {
-            content: "ASHAR";
-        }
-
-        .ws .MPtimetable tr:nth-child(6) td:nth-child(1):before {
-            content: "MAGHRIB";
-        }
-
-        .ws .MPtimetable tr:nth-child(7) td:nth-child(1):before {
-            content: "ISYA";
-        }
-
-        .ws .MPtimetable td:nth-child(2) {
-            font-size: 14px;
-            height: 24px;
-            line-height: 20px;
-            background: rgba(250, 250, 250, 0);
-            text-transform: uppercase;
-            text-align: center;
-            color: #7bae91
-        }
-
-        .ws .MPtimetable tr:nth-child(2n) {
-            background-color: #f7f7f7;
-        }
-
-        .ws .MPfooter {
-            display: none;
-        }
-
-        @media screen and (max-width:425px) {
-            .ws {
-                width: 100%;
-            }
-
-            .ws .MPtimetable tr {
-                width: 16.6666%;
-            }
-
-            .ws .MPwidget {
-                margin: 0;
-            }
-
-            .ws .MPheader .title,
-            .ws .tanggal {
-                font-size: 12px;
-            }
-
-            .ws .MPtimetable tr td:before {
-                height: 17px;
-                line-height: 17px;
-            }
-
-            .ws .MPtimetable td:nth-child(2) {
-                font-size: 13px;
-                height: 20px;
-                line-height: 14px;
-            }
-        }
-
-        /* Muslim Pro Custom Style End */
-    </style>
-</head>
-
-<body class="h-full">
-    <div class="min-h-full">
-        <nav class="bg-gray-800">
-            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div class="flex h-16 items-center justify-between">
-                    <div class="flex items-center">
-                        <div class="flex-shrink-0">
-                            <h3 class="text-2xl text-white font-bold tracking-wide select-none">Masjid Darussalam</h3>
-                        </div>
-                        <div class="hidden md:block">
-                            <div class="ml-10 flex items-baseline space-x-4">
-                                <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                                <a href="#" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Beranda</a>
-                                <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Profil</a>
-                                <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Berita</a>
-                                <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Gallery</a>
-                                <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Layanan</a>
-                            </div>
-                        </div>
+@extends('layout.default')
+@section('content')
+<div class="mx-auto max-w-7xl md:py-6 sm:px-6 lg:px-8">
+    <!-- Your content -->
+    <div class="bg-white h-full md:rounded-xl shadow-lg overflow-hidden">
+        <!-- spicr-slider basic markup -->
+        <div data-function="spicr" class="spicr spicr-slider" data-pause="false" data-interval="8000" data-touch="false">
+            <div class="spicr-inner">
+                <div class="item perspective-1500">
+                    <!-- item content -->
+                    <div class="item-bg spicr-layer" data-translate="x:-100%" data-duration="1000" data-easing="easingCubicInOut" style="background-image: url('{{ asset('img/1.jpg') }}')">
+                        <div class="overlay"></div>
                     </div>
-                    <div class="hidden md:block">
-                        <div class="ml-4 flex items-center md:ml-6">
-                            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Login</a>
-                            {{-- <button type="button" class="rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-                                <span class="sr-only">View notifications</span>
-                                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
-                                </svg>
-                            </button> --}}
-
-                            <!-- Profile dropdown -->
-                            <div class="relative ml-3 hidden">
-                                <div>
-                                    <button type="button" class="flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
-                                        <span class="sr-only">Open user menu</span>
-                                        <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
-                                    </button>
+                    <div class="w-full px-4 h-full">
+                        <div class="flex items-center h-full perspective">
+                            <div class="flex flex-col md:w-1/2 text-center mx-auto">
+                                <div class="spicr-layer py-6" data-translate="y:250" data-rotate="z:15" data-duration="1000" data-delay="700" data-easing="easingBackOut">
+                                    <h1 class="text-4xl font-bold">Masjid Darussalam</h1>
                                 </div>
-
-                                <!--
-                                    Dropdown menu, show/hide based on menu state.
-
-                                    Entering: "transition ease-out duration-100"
-                                    From: "transform opacity-0 scale-95"
-                                    To: "transform opacity-100 scale-100"
-                                    Leaving: "transition ease-in duration-75"
-                                    From: "transform opacity-100 scale-100"
-                                    To: "transform opacity-0 scale-95"
-                                -->
-                                <div class="absolute right-0 z-10 mt-2 hidden w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
-                                    <!-- Active: "bg-gray-100", Not Active: "" -->
-                                    <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
-                                    <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
-                                    <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
+                                <div class="spicr-layer py-6" data-translate="y:250" data-rotate="z:15" data-duration="1000" data-delay="700" data-easing="easingCubicInOut">
+                                    <p class="text-base tracking-widest">Perumahan Taman Rahayu Regency, Kelurahan Ciketing Udik, Kecamatan Bantar Gebang, Bekasi</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="-mr-2 flex md:hidden">
-                        <!-- Mobile menu button -->
-                        <button type="button" id="hamburger" class="inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" aria-controls="mobile-menu" aria-expanded="false">
-                            <span class="sr-only">Open main menu</span>
-                            <!-- Menu open: "hidden", Menu closed: "block" -->
-                            <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                            </svg>
-                            <!-- Menu open: "block", Menu closed: "hidden" -->
-                            <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                            </svg>
-                        </button>
+                </div>
+                <div class="item perspective-1500">
+                    <!-- item content -->
+                    <div class="item-bg spicr-layer" data-translate="x:50%,y:200,z:500" data-transform-origin="z:50%" data-duration="1000" data-easing="easingCubicInOut" style="background-image: url('{{ asset('img/2.jpg') }}')">
+                        <div class="overlay"></div>
                     </div>
-                </div>
-            </div>
-
-            <!-- Mobile menu, show/hide based on menu state. -->
-            <div class="hidden md:hidden" id="mobile-menu">
-                <div class="space-y-1 px-2 pb-3 pt-2 sm:px-3">
-                    <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                    <a href="#" class="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium" aria-current="page">Beranda</a>
-                    <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Profil</a>
-                    <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Berita</a>
-                    <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Gallery</a>
-                    <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Layanan</a>
-                    <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Login</a>
-                </div>
-                {{-- <div class="border-t border-gray-700 pb-3 pt-4"> --}}
-                <div class="border-t-0 border-gray-700 pb-0 pt-0">
-                    <div class="hidden items-center px-5">
-                        <div class="flex-shrink-0">
-                            <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
-                        </div>
-                        <div class="ml-3">
-                            <div class="text-base font-medium leading-none text-white">Tom Cook</div>
-                            <div class="text-sm font-medium leading-none text-gray-400">tom@example.com</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </nav>
-
-        <header class="bg-slate-800 md:bg-white shadow">
-            <div class="mx-auto max-w-7xl px-4 pb-6 md:pt-6 sm:px-6 lg:px-8">
-                <div class="ws">
-                    <div class="tanggal">
-                        <script>
-                            var months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
-                            var myDays = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jum&#39;at', 'Sabtu'];
-                            var date = new Date();
-                            var day = date.getDate();
-                            var month = date.getMonth();
-                            var thisDay = date.getDay(),
-                                thisDay = myDays[thisDay];
-                            var yy = date.getYear();
-                            var year = (yy < 1000) ? yy + 1900 : yy;
-                            document.write(thisDay + ', ' + day + ' ' + months[month] + ' ' + year);
-                        </script>
-                    </div>
-                    <script src="https://www.muslimpro.com/muslimprowidget.js?cityid=1649378&language=id&timeformat=24" async="true"></script>
-                </div>
-            </div>
-        </header>
-        <main>
-            <div class="mx-auto max-w-7xl md:py-6 sm:px-6 lg:px-8">
-                <!-- Your content -->
-                <div class="bg-white h-full md:rounded-xl shadow-lg overflow-hidden">
-                    <!-- spicr-slider basic markup -->
-                    <div data-function="spicr" class="spicr spicr-slider" data-pause="false" data-interval="5000" data-touch="false">
-                        <div class="spicr-inner">
-                            <div class="item perspective-1500">
-                                <!-- item content -->
-                                <div class="item-bg spicr-layer" data-rotate="x:90" data-transform-origin="z:50%v" data-duration="1000" data-easing="easingCubicInOut" style="background-image: url('{{ asset('img/1.jpg') }}')">
-                                    <div class="overlay"></div>
+                    <div class="w-full px-4 h-full">
+                        <div class="flex items-center h-full perspective">
+                            <div class="flex flex-col md:w-1/2 text-center mx-auto">
+                                <div class="spicr-layer py-6" data-translate="y:250" data-rotate="z:15" data-duration="1000" data-delay="700" data-easing="easingBackOut">
+                                    <h1 class="text-4xl font-bold">Info Layanan</h1>
                                 </div>
-                                <div class="w-full px-4 h-full">
-                                    <div class="flex items-center h-full perspective">
-                                        <div class="flex flex-col md:w-1/2 text-center mx-auto">
-                                            <div class="spicr-layer py-6" data-translate="y:250" data-rotate="z:15" data-duration="1000" data-delay="700" data-easing="easingBackOut">
-                                                <h1 class="text-4xl font-bold">Masjid Darussalam</h1>
-                                            </div>
-                                            <div class="spicr-layer py-6" data-translate="y:250" data-rotate="z:15" data-duration="1000" data-delay="700" data-easing="easingCubicInOut">
-                                                <p class="text-base tracking-widest">Perumahan Taman Rahayu Regency, Kelurahan Ciketing Udik, Kecamatan Bantar Gebang, Bekasi</p>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div class="spicr-layer py-6" data-translate="y:250" data-rotate="z:15" data-duration="1000" data-delay="700" data-easing="easingCubicInOut">
+                                    <p class="text-base tracking-widest">Menerima & Menyalurkan Zakat Fitrah, Menerima & Menyalurkan Hewan Kurban</p>
                                 </div>
                             </div>
-                            <div class="item perspective-1500">
-                                <!-- item content -->
-                                <img src="{{ asset('img/2.jpg') }}" alt="Gambar-2" class="w-full">
-                            </div>
                         </div>
-                        <ol class="spicr-pages flex flex-row justify-center">
-                            <li data-slide-to="0" class="active"></li>
-                            <li data-slide-to="1" class=""></li>
-                        </ol>
                     </div>
                 </div>
             </div>
-        </main>
+            <ol class="spicr-pages flex flex-row justify-center">
+                <li data-slide-to="0" class="active"></li>
+                <li data-slide-to="1" class=""></li>
+            </ol>
+        </div>
     </div>
-
-    <script src="{{ asset('js/jquery-3.7.0.min.js') }}"></script>
-    <script src="{{ asset('js/app.js') }}"></script>
-    <script src="{{ asset('vendor/kute-js/dist/kute.js') }}"></script>
-    <script src="{{ asset('vendor/spicr/dist/js/spicr-standalone.min.js') }}"></script>
-    <script>
-        $(function() {
-            $('#hamburger').on('click', function() {
-                $('#hamburger svg.block').toggle(300);
-                $('#hamburger svg.hidden').toggle(300);
-                $('#mobile-menu').slideToggle(300);
-            });
-        });
-    </script>
-</body>
-
-</html>
+</div>
+<section id="beranda" class="pt-36 pb-32 bg-dark">
+    <div class="container">
+        <div class="mx-auto max-w-7xl">
+            <div class="flex flex-wrap">
+                <div class="w-full px-4 mb-10 lg:w-1/2">
+                    <h4 class="font-bold uppercase text-primary text-lg mb-3">Lokasi Masjid Darussalam</h4>
+                    <h2 class="font-bold text-dark text-3xl mb-5 max-w-md lg:text-4xl dark:text-white">Kota Bekasi</h2>
+                    <p class="font-medium text-base text-secondary max-w-xl lg:text-lg">Perum. Taman Rahayu Regency, Kec. Bantar Gebang, Kel. Ciketing Udik, Kota Bekasi, Jawa Barat</p>
+                </div>
+                <div class="w-full px-4 lg:w-1/2">
+                    <div class="bg-white h-full rounded-xl shadow overflow-hidden">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d510.17996480855606!2d106.98793674640564!3d-6.361800621233132!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6993406f34fa8f%3A0xb1dac0152a1a634f!2sMasjid%20Darussalam%20Taman%20Rahayu%20Bekasi!5e0!3m2!1sid!2sid!4v1688642985208!5m2!1sid!2sid" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@endsection
