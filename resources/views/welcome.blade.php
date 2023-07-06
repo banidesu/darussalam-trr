@@ -7,8 +7,192 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Masjid Darussalam - {{ $pageTitle }}</title>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <script src="{{ asset('js/app.js') }}"></script>
-    <script src="{{ asset('js/jquery-3.7.0.min.js') }}"></script>
+    <link rel="stylesheet" href="{{ asset('vendor/spicr/dist/css/spicr.min.css') }}">
+
+    <style>
+        .perspective {
+            perspective: 500px;
+            backface-visibility: hidden;
+        }
+
+        .perspective-1500 {
+            perspective: 1500px;
+            backface-visibility: hidden;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, .45)
+        }
+
+        /* Muslim Pro Custom Style Start */
+        .ws {
+            padding: 0;
+            position: relative;
+            width: 504px;
+        }
+
+        .ws a {
+            text-decoration: none;
+        }
+
+        .ws .MPwidget {
+            width: 100%;
+            background: rgba(250, 250, 250, 0);
+            margin: 10px 0;
+            box-shadow: 0 0 0 rgba(250, 250, 250, 0);
+        }
+
+        .ws .MPheader {
+            background: rgba(250, 250, 250, 0);
+            padding: 0;
+            min-height: 30px;
+        }
+
+        .ws .MPheader .logo {
+            display: none;
+        }
+
+        .ws .MPheader .title,
+        .ws .tanggal {
+            padding: 0;
+            height: 30px;
+            line-height: 30px;
+            font-size: 14px;
+        }
+
+        .ws .MPwidget .title a,
+        .ws .tanggal {
+            color: #888;
+            font-family: 'Roboto', 'Open Sans', sans-serif;
+            font-weight: bold;
+            font-style: normal;
+            pointer-events: none;
+        }
+
+        .ws .tanggal {
+            position: absolute;
+            right: 0;
+            top: 0;
+            z-index: 20;
+            color: #dd3333;
+            float: right;
+        }
+
+        .ws .MPtimetable tr:first-child {
+            display: none;
+        }
+
+        .ws .MPtimetable tr {
+            display: inline-table;
+            width: 84px;
+            position: relative;
+        }
+
+        .ws .MPtimetable td {
+            position: relative;
+            display: table-row;
+            width: 74px;
+            padding: 5px;
+            text-align: center;
+            font-size: 10px;
+            height: 20px;
+            line-height: 20px;
+            background: rgba(250, 250, 250, 0);
+            text-transform: uppercase;
+            color: rgba(0, 0, 0, 0);
+        }
+
+        .ws .MPtimetable tr td:before {
+            font-size: 10px;
+            text-align: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            color: #333;
+            height: 20px;
+            line-height: 20px;
+        }
+
+        .ws .MPtimetable tr:nth-child(2) td:nth-child(1):before {
+            content: "SUBUH";
+        }
+
+        .ws .MPtimetable tr:nth-child(3) td:nth-child(1):before {
+            content: "TERBIT";
+        }
+
+        .ws .MPtimetable tr:nth-child(4) td:nth-child(1):before {
+            content: "DZUHUR";
+        }
+
+        .ws .MPtimetable tr:nth-child(5) td:nth-child(1):before {
+            content: "ASHAR";
+        }
+
+        .ws .MPtimetable tr:nth-child(6) td:nth-child(1):before {
+            content: "MAGHRIB";
+        }
+
+        .ws .MPtimetable tr:nth-child(7) td:nth-child(1):before {
+            content: "ISYA";
+        }
+
+        .ws .MPtimetable td:nth-child(2) {
+            font-size: 14px;
+            height: 24px;
+            line-height: 20px;
+            background: rgba(250, 250, 250, 0);
+            text-transform: uppercase;
+            text-align: center;
+            color: #7bae91
+        }
+
+        .ws .MPtimetable tr:nth-child(2n) {
+            background-color: #f7f7f7;
+        }
+
+        .ws .MPfooter {
+            display: none;
+        }
+
+        @media screen and (max-width:425px) {
+            .ws {
+                width: 100%;
+            }
+
+            .ws .MPtimetable tr {
+                width: 16.6666%;
+            }
+
+            .ws .MPwidget {
+                margin: 0;
+            }
+
+            .ws .MPheader .title,
+            .ws .tanggal {
+                font-size: 12px;
+            }
+
+            .ws .MPtimetable tr td:before {
+                height: 17px;
+                line-height: 17px;
+            }
+
+            .ws .MPtimetable td:nth-child(2) {
+                font-size: 13px;
+                height: 20px;
+                line-height: 14px;
+            }
+        }
+
+        /* Muslim Pro Custom Style End */
+    </style>
 </head>
 
 <body class="h-full">
@@ -111,21 +295,72 @@
             </div>
         </nav>
 
-        <!-- <header class="bg-white shadow">
+        <header class="bg-slate-800 md:bg-white shadow">
             <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-                <h1 class="text-3xl font-bold tracking-tight text-gray-900">Beranda</h1>
+                <div class="ws">
+                    <div class="tanggal">
+                        <script>
+                            var months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+                            var myDays = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jum&#39;at', 'Sabtu'];
+                            var date = new Date();
+                            var day = date.getDate();
+                            var month = date.getMonth();
+                            var thisDay = date.getDay(),
+                                thisDay = myDays[thisDay];
+                            var yy = date.getYear();
+                            var year = (yy < 1000) ? yy + 1900 : yy;
+                            document.write(thisDay + ', ' + day + ' ' + months[month] + ' ' + year);
+                        </script>
+                    </div>
+                    <script src="https://www.muslimpro.com/muslimprowidget.js?cityid=1649378&language=id&timeformat=24" async="true"></script>
+                </div>
             </div>
-        </header> -->
+        </header>
         <main>
-            <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
+            <div class="mx-auto max-w-7xl md:py-6 sm:px-6 lg:px-8">
                 <!-- Your content -->
+                <div class="bg-white h-full md:rounded-xl shadow-lg overflow-hidden">
+                    <!-- spicr-slider basic markup -->
+                    <div data-function="spicr" class="spicr spicr-slider" data-pause="false" data-interval="5000" data-touch="false">
+                        <div class="spicr-inner">
+                            <div class="item perspective-1500">
+                                <!-- item content -->
+                                <div class="item-bg spicr-layer" data-rotate="x:90" data-transform-origin="z:50%v" data-duration="1000" data-easing="easingCubicInOut" style="background-image: url('{{ asset('img/1.jpg') }}')">
+                                    <div class="overlay"></div>
+                                </div>
+                                <div class="w-full px-4 h-full">
+                                    <div class="flex items-center h-full perspective">
+                                        <div class="flex flex-col md:w-1/2 text-center mx-auto">
+                                            <div class="spicr-layer py-6" data-translate="y:250" data-rotate="z:15" data-duration="1000" data-delay="700" data-easing="easingBackOut">
+                                                <h1 class="text-4xl font-bold">Masjid Darussalam</h1>
+                                            </div>
+                                            <div class="spicr-layer py-6" data-translate="y:250" data-rotate="z:15" data-duration="1000" data-delay="700" data-easing="easingCubicInOut">
+                                                <p class="text-base tracking-widest">Perumahan Taman Rahayu Regency, Kelurahan Ciketing Udik, Kecamatan Bantar Gebang, Bekasi</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item perspective-1500">
+                                <!-- item content -->
+                                <img src="{{ asset('img/2.jpg') }}" alt="Gambar-2" class="w-full">
+                            </div>
+                        </div>
+                        <ol class="spicr-pages flex flex-row justify-center">
+                            <li data-slide-to="0" class="active"></li>
+                            <li data-slide-to="1" class=""></li>
+                        </ol>
+                    </div>
+                </div>
             </div>
         </main>
     </div>
 
+    <script src="{{ asset('js/jquery-3.7.0.min.js') }}"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('vendor/kute-js/dist/kute.js') }}"></script>
+    <script src="{{ asset('vendor/spicr/dist/js/spicr-standalone.min.js') }}"></script>
     <script>
-        
         $(function() {
             $('#hamburger').on('click', function() {
                 $('#hamburger svg.block').toggle(300);
