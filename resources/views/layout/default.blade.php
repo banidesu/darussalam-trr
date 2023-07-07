@@ -33,7 +33,7 @@
         .ws {
             padding: 0;
             position: relative;
-            width: 504px;
+            width: 50%;
         }
 
         .ws a {
@@ -88,20 +88,39 @@
         }
 
         .ws .MPtimetable tr {
-            display: inline-table;
-            width: 84px;
+            display: inline-block;
+            width: 100%;
             position: relative;
+            padding: 10px;
+        }
+
+        .MPtimetable {
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+        
+        .MPtimetable tbody {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .MPtimetable tr {
+            height: 100% !important;
+            background-color: #4b5563 !important;
+        }
+
+        .MPtimetable td:nth-child(2) {
+            padding: 0 !important;
         }
 
         .ws .MPtimetable td {
             position: relative;
-            display: table-row;
-            width: 74px;
+            display: block;
+            /* width: 74px; */
             padding: 5px;
             text-align: center;
             font-size: 10px;
             height: 20px;
-            line-height: 20px;
+            /* line-height: 20px; */
             background: rgba(250, 250, 250, 0);
             text-transform: uppercase;
             color: rgba(0, 0, 0, 0);
@@ -119,28 +138,47 @@
             line-height: 20px;
         }
 
+        .ws .MPtimetable tr:nth-child(2) {
+            border-radius: 0.5rem 0 0 0.5rem;
+        }
+
+        .ws .MPtimetable tr:last-child {
+            border-radius: 0 0.5rem 0.5rem 0;
+        }
+
         .ws .MPtimetable tr:nth-child(2) td:nth-child(1):before {
             content: "SUBUH";
+            color: #fff;
         }
 
         .ws .MPtimetable tr:nth-child(3) td:nth-child(1):before {
             content: "TERBIT";
+            color: #fff;
+
         }
 
         .ws .MPtimetable tr:nth-child(4) td:nth-child(1):before {
             content: "DZUHUR";
+            color: #fff;
+
         }
 
         .ws .MPtimetable tr:nth-child(5) td:nth-child(1):before {
             content: "ASHAR";
+            color: #fff;
+
         }
 
         .ws .MPtimetable tr:nth-child(6) td:nth-child(1):before {
             content: "MAGHRIB";
+            color: #fff;
+
         }
 
         .ws .MPtimetable tr:nth-child(7) td:nth-child(1):before {
             content: "ISYA";
+            color: #fff;
+
         }
 
         .ws .MPtimetable td:nth-child(2) {
@@ -150,11 +188,11 @@
             background: rgba(250, 250, 250, 0);
             text-transform: uppercase;
             text-align: center;
-            color: #1f2937;
+            color: #fff;
         }
 
         .ws .MPtimetable tr:nth-child(2n) {
-            background-color: #f7f7f7;
+            background-color: #1f2937 !important;
         }
 
         .ws .MPfooter {
@@ -188,6 +226,11 @@
                 font-size: 13px;
                 height: 20px;
                 line-height: 14px;
+            }
+
+            .MPtimetable tbody {
+                display: inherit;
+                justify-content: space-between;
             }
         }
 
