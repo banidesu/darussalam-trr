@@ -42,10 +42,49 @@
                         </div>
                     </div>
                 </div>
+                <div class="item perspective-1500">
+                    <!-- item content -->
+                    <div class="item-bg spicr-layer" data-translate="x:-50%,y:-200,z:-500" data-transform-origin="z:50%" data-duration="1000" data-easing="easingCubicInOut" style="background-image: url('{{ asset('img/3.jpg') }}')">
+                        <div class="overlay"></div>
+                    </div>
+                    <div class="w-full px-4 h-full">
+                        <div class="flex items-center h-full perspective">
+                            <div class="flex flex-col md:w-1/2 text-center mx-auto">
+                                <div class="spicr-layer py-6" data-translate="y:250" data-rotate="z:15" data-duration="1000" data-delay="700" data-easing="easingBackOut">
+                                    <h1 class="text-4xl font-bold">Risda</h1>
+                                </div>
+                                <div class="spicr-layer py-6" data-translate="y:250" data-rotate="z:15" data-duration="1000" data-delay="700" data-easing="easingCubicInOut">
+                                    <p class="text-lg font-semibold tracking-widest">Remaja Islam Masjid Darussalam</p>
+                                    <p class="text-base tracking-widest">Pemuda pemudi yang insyaallah istiqomah dalam memakmurkan Masjid Darussalam</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item perspective-1500">
+                    <!-- item content -->
+                    <div class="item-bg spicr-layer" data-translate="x:100,z:500" data-transform-origin="z:50%" data-duration="1000" data-easing="easingCubicInOut" style="background-image: url('{{ asset('img/4.jpg') }}')">
+                        <div class="overlay"></div>
+                    </div>
+                    <div class="w-full px-4 h-full">
+                        <div class="flex items-center h-full perspective">
+                            <div class="flex flex-col md:w-1/2 text-center mx-auto">
+                                <div class="spicr-layer py-6" data-translate="y:250" data-rotate="z:15" data-duration="1000" data-delay="700" data-easing="easingBackOut">
+                                    <h1 class="text-4xl font-bold">TPA & PAUD</h1>
+                                </div>
+                                <div class="spicr-layer py-6" data-translate="y:250" data-rotate="z:15" data-duration="1000" data-delay="700" data-easing="easingCubicInOut">
+                                    <p class="text-base tracking-widest">TPA dan PAUD Masjid Darussalam untuk kegiatan mengaji dan belajar anak-anak</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <ol class="spicr-pages flex flex-row justify-center">
                 <li data-slide-to="0" class="active"></li>
                 <li data-slide-to="1" class=""></li>
+                <li data-slide-to="2" class=""></li>
+                <li data-slide-to="3" class=""></li>
             </ol>
         </div>
     </div>

@@ -33,7 +33,7 @@
         .ws {
             padding: 0;
             position: relative;
-            width: 50%;
+            width: 100%;
         }
 
         .ws a {
@@ -43,7 +43,7 @@
         .ws .MPwidget {
             width: 100%;
             background: rgba(250, 250, 250, 0);
-            margin: 10px 0;
+            margin: 0 0 10px;
             box-shadow: 0 0 0 rgba(250, 250, 250, 0);
         }
 
@@ -97,7 +97,7 @@
         .MPtimetable {
             box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
         }
-        
+
         .MPtimetable tbody {
             display: flex;
             justify-content: space-between;
@@ -200,9 +200,9 @@
         }
 
         @media screen and (max-width:425px) {
-            .ws {
+            /* .ws {
                 width: 100%;
-            }
+            } */
 
             .ws .MPtimetable tr {
                 width: 16.6666%;
@@ -340,8 +340,8 @@
             </div>
         </nav>
 
-        <header class="bg-slate-800 md:bg-white shadow">
-            <div class="mx-auto max-w-7xl px-4 pb-6 md:pt-6 sm:px-6 lg:px-8">
+        <header class="bg-slate-50 md:bg-white shadow">
+            <div class="mx-auto max-w-7xl px-4 md:pb-6 pb-4 md:pt-4 sm:px-6 lg:px-8">
                 <div class="ws">
                     <div class="tanggal">
                         <script>
@@ -358,6 +358,19 @@
                         </script>
                     </div>
                     <script src="https://www.muslimpro.com/muslimprowidget.js?cityid=1649378&language=id&timeformat=24" async="true"></script>
+                </div>
+                <div class="w-full relative p-0 shadow-lg md:mt-0 mt-4">
+                    <div class="flex items-center text-center">
+                        <div class="w-full md:p-5 p-1 md:bg-dark bg-secondary rounded-s-lg">
+                            <h3 class="font-bold md:text-3xl text-xl text-white" id="jam"></h3>
+                        </div>
+                        <div class="w-full md:p-5 p-1 md:bg-dark bg-secondary">
+                            <h3 class="font-bold md:text-3xl text-xl text-white" id="menit"></h3>
+                        </div>
+                        <div class="w-full md:p-5 p-1 md:bg-dark bg-secondary rounded-e-lg">
+                            <h3 class="font-bold md:text-3xl text-xl text-white" id="detik"></h3>
+                        </div>
+                    </div>
                 </div>
             </div>
         </header>
@@ -379,7 +392,17 @@
                 $('#hamburger svg.hidden').toggle(300);
                 $('#mobile-menu').slideToggle(300);
             });
+
+            window.setTimeout("waktu()", 1000);
         });
+
+        function waktu() {
+            var waktu = new Date();
+            setTimeout("waktu()", 1000);
+            document.getElementById("jam").innerHTML = waktu.getHours();
+            document.getElementById("menit").innerHTML = waktu.getMinutes();
+            document.getElementById("detik").innerHTML = waktu.getSeconds();
+        }
     </script>
     @yield('script')
 </body>
