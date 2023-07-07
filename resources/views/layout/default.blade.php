@@ -340,7 +340,7 @@
             </div>
         </nav>
 
-        <header class="bg-slate-50 md:bg-white shadow">
+        <header class="bg-slate-50 md:bg-slate-300 shadow">
             <div class="mx-auto max-w-7xl px-4 md:pb-6 pb-4 md:pt-4 sm:px-6 lg:px-8">
                 <div class="ws">
                     <div class="tanggal">
