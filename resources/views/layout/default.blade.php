@@ -400,8 +400,12 @@
             var waktu = new Date();
             setTimeout("waktu()", 1000);
             document.getElementById("jam").innerHTML = waktu.getHours();
-            document.getElementById("menit").innerHTML = waktu.getMinutes();
-            document.getElementById("detik").innerHTML = waktu.getSeconds();
+            document.getElementById("menit").innerHTML = set(waktu.getMinutes());
+            document.getElementById("detik").innerHTML = set(waktu.getSeconds());
+        }
+        function set(a) {
+            a = a < 10 ? '0' + a : a;
+            return a;
         }
     </script>
     @yield('script')
