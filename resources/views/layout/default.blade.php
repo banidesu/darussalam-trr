@@ -399,7 +399,7 @@
         function waktu() {
             var waktu = new Date();
             setTimeout("waktu()", 1000);
-            document.getElementById("jam").innerHTML = waktu.getHours();
+            document.getElementById("jam").innerHTML = set(waktu.getHours());
             document.getElementById("menit").innerHTML = set(waktu.getMinutes());
             document.getElementById("detik").innerHTML = set(waktu.getSeconds());
         }
