@@ -252,11 +252,11 @@
                         <div class="hidden md:block">
                             <div class="ml-10 flex items-baseline space-x-4">
                                 <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                                <a href="#" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Beranda</a>
-                                <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Profil</a>
-                                <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Berita</a>
-                                <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Gallery</a>
-                                <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Layanan</a>
+                                <a href="{{ url('/') }}" class="rounded-md px-3 py-2 text-sm font-medium {{ url()->current() == url('/') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }}" aria-current="page">Beranda</a>
+                                <a href="{{ route('profile') }}" class="rounded-md px-3 py-2 text-sm font-medium {{ url()->current() == route('profile') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }}">Profil</a>
+                                <a href="{{ route('berita') }}" class="rounded-md px-3 py-2 text-sm font-medium {{ url()->current() == route('berita') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }}">Berita</a>
+                                <a href="{{ route('gallery') }}" class="rounded-md px-3 py-2 text-sm font-medium {{ url()->current() == route('gallery') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }}">Gallery</a>
+                                <a href="{{ route('layanan') }}" class="rounded-md px-3 py-2 text-sm font-medium {{ url()->current() == route('layanan') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }}">Layanan</a>
                             </div>
                         </div>
                     </div>

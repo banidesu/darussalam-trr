@@ -15,4 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [PagesController::class, 'index']);
-Route::get('/profile', [PagesController::class, 'profile']);
+Route::get('/profile', [PagesController::class, 'profile'])->name('profile');
+Route::get('/berita', [PagesController::class, 'berita'])->name('berita');
+Route::get('/gallery', [PagesController::class, 'gallery'])->name('gallery');
+Route::get('/layanan', [PagesController::class, 'layanan'])->name('layanan');
