@@ -12,4 +12,10 @@ class PagesController extends Controller
 
         return view('welcome', compact('pageTitle'));
     }
+    
+    public function profile() {
+        $pageTitle = 'Profil';
+
+        return view('profile', compact('pageTitle'));
+    }
 }
