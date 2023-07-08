@@ -8,6 +8,7 @@
     <title>Masjid Darussalam - {{ $pageTitle }}</title>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/spicr/dist/css/spicr.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/fontawesome/css/all.min.css') }}">
 
     <style>
         .perspective {
@@ -381,16 +382,39 @@
         </main>
     </div>
 
+    <div class="h-14 w-14 bg-primary shadow-md opacity-50 hover:opacity-100 flex justify-center items-center p-4 rounded-full fixed z-[9999] bottom-4 right-4 lg:hover:animate-pulse cursor-pointer" id="to-top">
+        <span class="block"><i class="fa-solid fa-fw fa-arrow-up fa0lg"></i></span>
+    </div>
+
     <script src="{{ asset('js/jquery-3.7.0.min.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/jquery_easing.1.3.js') }}"></script>
     <script src="{{ asset('vendor/kute-js/dist/kute.js') }}"></script>
     <script src="{{ asset('vendor/spicr/dist/js/spicr-standalone.min.js') }}"></script>
+    <script src="{{ asset('vendor/fontawesome/js/all.min.js') }}"></script>
     <script>
         $(function() {
             $('#hamburger').on('click', function() {
                 $('#hamburger svg.block').toggle(300);
                 $('#hamburger svg.hidden').toggle(300);
                 $('#mobile-menu').slideToggle(300);
+            });
+
+            $("#to-top").hide();
+            $(window).on('scroll', function() {
+                if ($(this).scrollTop() > 300) {
+                    $('#to-top').fadeIn();
+                } else {
+                    $('#to-top').fadeOut();
+                }
+            });
+
+            $('#to-top').on('click', function(e) {
+                e.preventDefault();
+
+                $('html, body').animate({
+                    scrollTop: 0
+                }, 1500, 'easeInOutExpo');
             });
 
             window.setTimeout("waktu()", 1000);
@@ -403,6 +427,7 @@
             document.getElementById("menit").innerHTML = set(waktu.getMinutes());
             document.getElementById("detik").innerHTML = set(waktu.getSeconds());
         }
+
         function set(a) {
             a = a < 10 ? '0' + a : a;
             return a;
