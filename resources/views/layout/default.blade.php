@@ -382,9 +382,72 @@
         </main>
     </div>
 
+    <!-- Footer Start -->
+    <footer class="bg-dark pt-24 pb-12">
+        <div class="container">
+            <div class="mx-auto max-w-7xl">
+                <div class="flex flex-wrap">
+                    <div class="w-full px-4 mb-10 text-slate-300 font-medium md:w-1/3">
+                        <h2 class="font-bold text-4xl text-white mb-5">Masjid Darussalam</h2>
+                        <h3 class="font-bold text-2xl mb-2">Hubungi Kami</h3>
+                        <div class="mb-3">
+                            <p>082312394001 <span>(Maryanto)</span></p>
+                            <p>081314218843 <span>(Munif)</span></p>
+                        </div>
+                        <p>Perum. Taman Rahayu Regency, Kec. Bantar Gebang, Kel. Ciketing Udik, Kota Bekasi, Jawa Barat</p>
+                        <p>Kota Bekasi</p>
+                    </div>
+                    <div class="w-full px-4 font-medium mb-10 md:w-1/3">
+                        <h3 class="font-semibold text-xl text-white mb-5">Pelayanan</h3>
+                        <ul class="text-slate-300">
+                            <li>
+                                <a href="#" class="inline-block text-base hover:text-primary mb-3">Pembayaran Zakat</a>
+                            </li>
+                            <li>
+                                <a href="#" class="inline-block text-base hover:text-primary mb-3">Penyaluran Hewan Kurban</a>
+                            </li>
+                            <li>
+                                <a href="#" class="inline-block text-base hover:text-primary mb-3">Pengajian Rutin</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="w-full px-4 font-medium mb-12 md:w-1/3">
+                        <h3 class="font-semibold text-xl text-white mb-5">Informasi</h3>
+                        <ul class="text-slate-300">
+                            <li>
+                                <a href="#" class="inline-block text-base hover:text-primary mb-3">Pengajian Yasin Tahlil</a>
+                            </li>
+                            <li>
+                                <a href="#" class="inline-block text-base hover:text-primary mb-3">Sholat Berjama'ah</a>
+                            </li>
+                            <li>
+                                <a href="#" class="inline-block text-base hover:text-primary mb-3">Pengurus DKM</a>
+                            </li>
+                            <li>
+                                <a href="#" class="inline-block text-base hover:text-primary mb-3">Khatib Jumat</a>
+                            </li>
+                            <li>
+                                <a href="#" class="inline-block text-base hover:text-primary mb-3">TPA & PAUD</a>
+                            </li>
+                            <li>
+                                <a href="#" class="inline-block text-base hover:text-primary mb-3">RISDA</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="w-full pt-10 border-t border-slate-700">
+                    <p class="font-medium md:text-sm text-xs text-slate-500 text-center">&copy; {{ date('Y') }} Masjid Darussalam All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer End -->
+
+    <!-- Back to top Start -->
     <div class="h-14 w-14 bg-primary shadow-md opacity-50 hover:opacity-100 flex justify-center items-center p-4 rounded-full fixed z-[9999] bottom-4 right-4 lg:hover:animate-pulse cursor-pointer" id="to-top">
         <span class="block"><i class="fa-solid fa-fw fa-arrow-up fa0lg"></i></span>
     </div>
+    <!-- Back to top End -->
 
     <script src="{{ asset('js/jquery-3.7.0.min.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
