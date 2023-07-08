@@ -415,7 +415,7 @@
                         <h3 class="font-semibold text-xl text-white mb-5">Informasi</h3>
                         <ul class="text-slate-300">
                             <li>
-                                <a href="#" class="inline-block text-base hover:text-primary mb-3">Pengajian Yasin Tahlil</a>
+                                <a href="#" class="inline-block text-base hover:text-primary mb-3">INFAQ & SODAQOH</a>
                             </li>
                             <li>
                                 <a href="#" class="inline-block text-base hover:text-primary mb-3">Sholat Berjama'ah</a>
