@@ -11,7 +11,7 @@
                 </div>
                 <div class="w-full px-4 mb-10 font-medium md:w-1/2">
                     <div class="bg-slate-100 rounded-xl shadow-lg overflow-hidden mb-10">
-                        <img src="{{ asset('img/7.jpg') }}" alt="Gambar-7" class="w-full aspect-video object-cover" loading="lazy">
+                        <img src="{{ asset('img/12.jpg') }}" alt="Gambar-12" class="w-full aspect-video object-cover" loading="lazy">
                     </div>
                 </div>
             </div>
