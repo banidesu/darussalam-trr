@@ -19,3 +19,4 @@ Route::get('/profile', [PagesController::class, 'profile'])->name('profile');
 Route::get('/berita', [PagesController::class, 'berita'])->name('berita');
 Route::get('/gallery', [PagesController::class, 'gallery'])->name('gallery');
 Route::get('/layanan', [PagesController::class, 'layanan'])->name('layanan');
+Route::get('/login', [PagesController::class, 'login'])->name('login');

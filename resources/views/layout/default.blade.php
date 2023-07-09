@@ -262,7 +262,7 @@
                     </div>
                     <div class="hidden md:block">
                         <div class="ml-4 flex items-center md:ml-6">
-                            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Login</a>
+                            <a href="{{ route('login') }}" class="rounded-md px-3 py-2 text-sm font-medium {{ url()->current() == route('login') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }}">Login</a>
                             {{-- <button type="button" class="rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                                 <span class="sr-only">View notifications</span>
                                 <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
@@ -319,12 +319,12 @@
             <div class="hidden md:hidden" id="mobile-menu">
                 <div class="space-y-1 px-2 pb-3 pt-2 sm:px-3">
                     <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                    <a href="#" class="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium" aria-current="page">Beranda</a>
-                    <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Profil</a>
-                    <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Berita</a>
-                    <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Gallery</a>
-                    <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Layanan</a>
-                    <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Login</a>
+                    <a href="{{ url('/') }}" class="block rounded-md px-3 py-2 text-base font-medium {{ url()->current() == url('/') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }}" aria-current="page">Beranda</a>
+                    <a href="{{ route('profile') }}" class="block rounded-md px-3 py-2 text-base font-medium {{ url()->current() == route('profile') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }}">Profil</a>
+                    <a href="{{ route('berita') }}" class="block rounded-md px-3 py-2 text-base font-medium {{ url()->current() == route('berita') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }}">Berita</a>
+                    <a href="{{ route('gallery') }}" class="block rounded-md px-3 py-2 text-base font-medium {{ url()->current() == route('gallery') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }}">Gallery</a>
+                    <a href="{{ route('layanan') }}" class="block rounded-md px-3 py-2 text-base font-medium {{ url()->current() == route('layanan') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }}">Layanan</a>
+                    <a href="{{ route('login') }}" class="block rounded-md px-3 py-2 text-base font-medium {{ url()->current() == route('login') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }}">Login</a>
                 </div>
                 {{-- <div class="border-t border-gray-700 pb-3 pt-4"> --}}
                 <div class="border-t-0 border-gray-700 pb-0 pt-0">
