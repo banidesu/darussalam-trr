@@ -1,11 +1,16 @@
 <!DOCTYPE html>
-<html class="h-full bg-gray-100" lang="en">
+<html class="h-full bg-gray-100" lang="id">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" href="{{ asset('img/logo.png') }}" />
+    <meta property="og:locale" content="id_ID">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Masjid Darussalam">
+    <meta property="og:title" content="Masjid Darussalam - Taman Rahayu Regency">
+    <meta name="keywords" content="darussalam, masjid darussalam, web darussalam, website darussalam, Risda, risda, masjid darussalam tamara">
+    <link rel="shortcut icon" href="{{ asset('img/logo.png') }}">
     <title>Masjid Darussalam - {{ $pageTitle }}</title>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/spicr/dist/css/spicr.min.css') }}">
