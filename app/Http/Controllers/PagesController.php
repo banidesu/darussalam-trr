@@ -24,4 +24,10 @@ class PagesController extends Controller
 
         return view('berita', compact('pageTitle'));
     }
+
+    public function gallery() {
+        $pageTitle = 'Gallery';
+
+        return view('gallery', compact('pageTitle'));
+    }
 }
