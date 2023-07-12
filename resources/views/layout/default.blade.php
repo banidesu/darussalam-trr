@@ -397,7 +397,7 @@
                         <h2 class="font-bold text-4xl text-white mb-5">Masjid Darussalam</h2>
                         <h3 class="font-bold text-2xl mb-2">Hubungi Kami</h3>
                         <div class="mb-3">
-                            <p>082312394001 <span>(Maryanto)</span></p>
+                            <p>085777408570 <span>(Maryanto)</span></p>
                             <p>081314218843 <span>(Munif)</span></p>
                         </div>
                         <p>Perum. Taman Rahayu Regency, Kec. Bantar Gebang, Kel. Ciketing Udik, Kota Bekasi, Jawa Barat</p>

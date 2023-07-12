@@ -663,6 +663,9 @@ video {
 .max-w-7xl {
   max-width: 80rem;
 }
+.max-w-lg {
+  max-width: 32rem;
+}
 .max-w-md {
   max-width: 28rem;
 }
@@ -785,6 +788,9 @@ video {
 .border-gray-700 {
   --tw-border-opacity: 1;
   border-color: rgb(55 65 81 / var(--tw-border-opacity));
+}
+.border-primary\/70 {
+  border-color: rgb(6 182 212 / 0.7);
 }
 .border-slate-500 {
   --tw-border-opacity: 1;
