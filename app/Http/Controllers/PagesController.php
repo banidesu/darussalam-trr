@@ -30,4 +30,10 @@ class PagesController extends Controller
 
         return view('gallery', compact('pageTitle'));
     }
+
+    public function layanan() {
+        $pageTitle = 'Layanan';
+
+        return view('layanan', compact('pageTitle'));
+    }
 }
