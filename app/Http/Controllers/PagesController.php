@@ -36,4 +36,10 @@ class PagesController extends Controller
 
         return view('layanan', compact('pageTitle'));
     }
+
+    public function login() {
+        $pageTitle = 'Login';
+
+        return view('auth.login', compact('pageTitle'));
+    }
 }
